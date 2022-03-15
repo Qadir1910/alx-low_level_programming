@@ -1,51 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - Print the combinatios of four digits
- * made of two by two separated by space
- * do not repeat combination
- * Return: zero
+ * main - Entry point
+ *
+ * Return: Always 0
  */
-
 
 int main(void)
 {
-	int r1, r2, r3, r4, r5, r6;
-	r1 = r2 = r3 = r4 = 48;
-while (r4 < 58)
+	int p, q;
+
+
+	for (p = 0; p <= 98; p++)
 	{
-	r3 = 48;
-	while (r3 < 58)
-	{
-		r2 = 48;
-		while (r2 < 58)
+		for (q = p + 1; q <= 99; q++)
 		{
-			r1 = 48;
-			while (r1 < 58)
-			{
-				r5 = (r4 * 10) + r3;
-				r6 = (r2 * 10) + r1;
-				if (r5 < r6)
-				{
-					putchar(r4);
-					putchar(r3);
-					putchar(' ');
-					putchar(r2);
-					putchar(r1);
-					if (r4 == 57 && r3 == 56 && r2 == 57 && r1 == 57)
-					break;
-					putchar(',');
-					putchar(' ');
-				}
-				r1++;
-			}
-			r2++;
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+
+			if (p == 98 && q == 99)
+				continue;
+
+		
+			putchar(',');
+			putchar(' ');
 		}
-		r3++;
 	}
-	r4++;
-	}
+
 	putchar('\n');
+
 	return (0);
 }
-

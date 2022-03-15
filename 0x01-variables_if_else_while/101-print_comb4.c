@@ -1,41 +1,37 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - Print the combinatios of three digits
- * tree digits must be different
- * do not repeat combination
- * Return: zero
+ * main - Entry point
+ *
+ * Return: Always 0
  */
 
 int main(void)
 {
-	int rza = 48;
-	int zar = 49;
-	int arz = 50;
+	int p, q;
 
-	while (rza <= 55)
+	for (p = 0; p <= 98; p++)
 	{
-		while (zar <= 56)
+		for (q = p + 1; q <= 99; q++)
 		{
-			while (arz <= 57)
-			{
-				putchar(rza);
-				putchar(zar);
-				putchar(arz);
-				if (rza != 55)
-				{
-					putchar(44);
-					putchar(32);
-				}
-				arz++;
-			}
-			zar++;
-			arz = zar + 1;
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+		
+			if (p == 98 && q == 99)
+				continue;
+				
+			putchar(',');
+			putchar(' ');
 		}
-		rza++;
-		zar = rza + 1;
-		arz = zar + 1;
 	}
+
+
 	putchar('\n');
+
 	return (0);
 }
