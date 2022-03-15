@@ -2,8 +2,8 @@
 
 /**
  * main - Print the combinatios of three digits
- *     	 tree digits must be different
- * 	 do not repeat combination
+ * tree digits must be different
+ * do not repeat combination
  * Return: zero
  */
 
