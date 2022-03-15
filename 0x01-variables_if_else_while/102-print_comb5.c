@@ -13,7 +13,7 @@ int main(void)
 	int r1, r2, r3, r4, r5, r6;
 	r1 = r2 = r3 = r4 = 48;
 
-	while (r4 < 58)
+while (r4 < 58)
 	{
 	r3 = 48;
 	while (r3 < 58)
